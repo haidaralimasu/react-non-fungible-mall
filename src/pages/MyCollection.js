@@ -62,7 +62,6 @@ const MyCollection = (props) => {
 	const classes = useStyles();
 
 	 const [nfts, setNfts] = useState([])
-  const [loadingState, setLoadingState] = useState('not-loaded')
   useEffect(() => {
     loadNFTs()
   }, [])
@@ -95,7 +94,6 @@ const MyCollection = (props) => {
       return item
     }))
     setNfts(items)
-    setLoadingState('loaded') 
   }
   
 

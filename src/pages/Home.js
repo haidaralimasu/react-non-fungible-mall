@@ -59,7 +59,7 @@ const Home = (props) => {
 	const classes = useStyles();
 
   const [nfts, setNfts] = useState([])
-  const [loadingState, setLoadingState] = useState('not-loaded')
+
   useEffect(() => {
     loadNFTs()
   }, [])
@@ -90,7 +90,6 @@ const Home = (props) => {
       return item
     }))
     setNfts(items)
-    setLoadingState('loaded') 
   }
   async function buyNft(nft) {
     const web3Modal = new Web3Modal()

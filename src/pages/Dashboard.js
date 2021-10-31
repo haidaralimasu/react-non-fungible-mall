@@ -62,7 +62,6 @@ const Dashboard = (props) => {
 
   const [nfts, setNfts] = useState([])
   const [sold, setSold] = useState([])
-  const [loadingState, setLoadingState] = useState('not-loaded')
   useEffect(() => {
     loadNFTs()
   }, [])
@@ -98,7 +97,6 @@ const Dashboard = (props) => {
     const soldItems = items.filter(i => i.sold)
     setSold(soldItems)
     setNfts(items)
-    setLoadingState('loaded') 
   }
   
 
