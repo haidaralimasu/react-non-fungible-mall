@@ -126,7 +126,7 @@ const Dashboard = (props) => {
                       {nft.description}
                     </Typography>
                     <Typography style={{color: "green"}}>
-                      {nft.price} ETH
+                      {nft.price} MATIC
                     </Typography>
                   </CardContent>
                   <CardActions>
@@ -159,7 +159,7 @@ const Dashboard = (props) => {
                       {nft.description}
                     </Typography>
                     <Typography style={{color: "green"}}>
-                      {nft.price} ETH
+                      {nft.price} MATIC
                     </Typography>
                   </CardContent>
                   <CardActions>

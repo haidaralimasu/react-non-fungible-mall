@@ -112,10 +112,10 @@ const Home = (props) => {
         <div className={classes.heroContent}>
           <Container maxWidth="sm">
             <Typography component="h1" variant="h2" align="center" color="textPrimary" gutterBottom>
-              Non Fungible Mall
+              BullCarter NFT
             </Typography>
             <Typography variant="h5" align="center" color="textSecondary" paragraph>
-              Non Fungible Mall is the marketplace for NFTs deployed on rinkeby. Mint or buy NFTs and get started with the future of ownership.
+              Welcome BullCarter NFT Project. This is a NFT Marketplace living on polygon.
             </Typography>
             <div className={classes.heroButtons}>
               <Grid container spacing={2} justifyContent="center">
@@ -156,7 +156,7 @@ const Home = (props) => {
                       {nft.description}
                     </Typography>
                     <Typography style={{color: "green"}}>
-                      {nft.price} ETH
+                      {nft.price} MATIC
                     </Typography>
                   </CardContent>
                   <CardActions>

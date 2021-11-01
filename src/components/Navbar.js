@@ -77,7 +77,7 @@ const Navbar = (props) => {
         </Menu>
             
             <Typography variant="h6" className={classes.title}>
-              N.F.M
+              BullCarter
             </Typography>
             {isConnected ? (
                 <Button color="inherit" onClick={deactivate}>
