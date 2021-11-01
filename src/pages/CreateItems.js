@@ -11,7 +11,6 @@ import { ethers } from 'ethers'
 import { create as ipfsHttpClient } from 'ipfs-http-client'
 import Web3Modal from 'web3modal'
 import { useHistory } from 'react-router-dom';
-import { useEthers } from "@usedapp/core";
 
 
 import {
@@ -29,7 +28,7 @@ const useStyles = makeStyles((theme) => ({
     height: '100vh',
   },
   image: {
-    backgroundImage: 'url(https://cdn.dribbble.com/users/285475/screenshots/2083086/dribbble_1.gif)',
+    // backgroundImage: 'url(https://cdn.dribbble.com/users/285475/screenshots/2083086/dribbble_1.gif)',
     backgroundRepeat: 'no-repeat',
     backgroundColor:
       theme.palette.type === 'light' ? theme.palette.grey[50] : theme.palette.grey[900],
@@ -61,7 +60,6 @@ const useStyles = makeStyles((theme) => ({
 
 const CreateItems = (props) => {
 
-  const { account } = useEthers()
   const [fileUrl, setFileUrl] = useState(null)
   const [formInput, updateFormInput] = useState({ price: '', name: '', description: '' })
 
@@ -93,7 +91,7 @@ const CreateItems = (props) => {
       const added = await client.add(data)
       const url = `https://ipfs.infura.io/ipfs/${added.path}`
       /* after file is uploaded to IPFS, pass the URL to save it on Polygon */
-      createSale(url)
+      await createSale(url)
       history.push('/')
     } catch (error) {
       console.log('Error uploading file: ', error)
@@ -190,7 +188,6 @@ const CreateItems = (props) => {
             >
             Mint
             </Button>
-                  {account}
             <Grid container>
               
             </Grid>

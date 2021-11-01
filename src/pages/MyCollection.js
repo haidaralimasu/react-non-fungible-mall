@@ -67,7 +67,7 @@ const MyCollection = (props) => {
   }, [])
   async function loadNFTs() {
     const web3Modal = new Web3Modal({
-      network: "rinkeby",
+      network: "mumbai",
       cacheProvider: true,
     })
     const connection = await web3Modal.connect()

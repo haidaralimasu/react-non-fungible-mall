@@ -7,7 +7,7 @@ import './style.css';
 const App = (props) => {
   return (
     <DAppProvider config={{
-      supportedChains: [ChainId.Rinkeby],
+      supportedChains: [ChainId.Mumbai],
       notifications: {
         expirationPeriod: 1000,
         checkInterval: 1000

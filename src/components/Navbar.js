@@ -21,49 +21,49 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
   },
   link: {
-  	textDecoration: "None",
-  	color: "black",
+    textDecoration: "None",
+    color: "black",
   },
   burger: {
-  	color: "white",
+    color: "white",
   }
 }));
 
 const Navbar = (props) => {
 
-	const [anchorEl, setAnchorEl] = React.useState(null);
+  const [anchorEl, setAnchorEl] = React.useState(null);
 
-  	const handleClick = (event) => {
-    	setAnchorEl(event.currentTarget);
-  	};
+    const handleClick = (event) => {
+      setAnchorEl(event.currentTarget);
+    };
 
-  	const handleClose = () => {
-    	setAnchorEl(null);
-  	};
-	const { account, activateBrowserWallet, deactivate } = useEthers()
-  	const isConnected = account !== undefined
-	const classes = useStyles();
+    const handleClose = () => {
+      setAnchorEl(null);
+    };
+  const { account, activateBrowserWallet, deactivate } = useEthers()
+    const isConnected = account !== undefined
+  const classes = useStyles();
 
   return (
-	<div className={classes.root}>
-      	<AppBar position="static">
-        	<Toolbar>
-          	
-            	
-           	<Button className={classes.burger} aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>
-        		<MenuIcon />
-      		</Button>
-      	<Menu
-        	id="simple-menu"
-        	anchorEl={anchorEl}
-        	keepMounted
-        	open={Boolean(anchorEl)}
-       		onClose={handleClose}
-      	>
-        	
-        	<Link className={classes.link} to="/">
-        	<MenuItem onClick={handleClose}>Home</MenuItem>
-        	</Link>
+  <div className={classes.root}>
+        <AppBar position="static">
+          <Toolbar>
+            
+              
+            <Button className={classes.burger} aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>
+            <MenuIcon />
+          </Button>
+        <Menu
+          id="simple-menu"
+          anchorEl={anchorEl}
+          keepMounted
+          open={Boolean(anchorEl)}
+          onClose={handleClose}
+        >
+          
+          <Link className={classes.link} to="/">
+          <MenuItem onClick={handleClose}>Home</MenuItem>
+          </Link>
           <Link className={classes.link} to="/create-items">
           <MenuItem onClick={handleClose}>Create</MenuItem>
           </Link>
@@ -73,26 +73,26 @@ const Navbar = (props) => {
           <Link className={classes.link} to="/dashboard">
           <MenuItem onClick={handleClose}>Dashboard</MenuItem>
           </Link>
-        	
-      	</Menu>
-          	
-          	<Typography variant="h6" className={classes.title}>
-            	N.F.M
-          	</Typography>
-          	{isConnected ? (
+          
+        </Menu>
+            
+            <Typography variant="h6" className={classes.title}>
+              N.F.M
+            </Typography>
+            {isConnected ? (
                 <Button color="inherit" onClick={deactivate}>
                     Disconnect
                 </Button>
             ) : (
                 <Button
-                	color="inherit"
+                  color="inherit"
                     onClick={activateBrowserWallet}
                 >
                     Connect
                 </Button>
             )}
-        	</Toolbar>
-      	</AppBar>
+          </Toolbar>
+        </AppBar>
     </div>
   )
 }
